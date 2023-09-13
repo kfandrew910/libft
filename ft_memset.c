@@ -12,12 +12,13 @@
 
 void	*memset(void *b, int c, size_t len)
 {
-	unsigned int	i;
-	i = 0;
+	size_t	i;
 
+	i = 0;
 	while (i < len)
 	{
 		*(b + i) = c;
 		i++;
 	}
+	return (b);
 }
