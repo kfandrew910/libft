@@ -5,5 +5,5 @@ void *memmove(void *dest, const void *src, size_t n)
 {
     if(dest == src || !n)
         return (dest);
-    
+    return (0);
 }
