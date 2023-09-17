@@ -1,1 +1,1 @@
-cat ft_*.c | grep -P 'ft.*\(' | sed 's/$/;/'
+cat ft_*.c | grep -E 'ft.*\(' | sed 's/$/;/'

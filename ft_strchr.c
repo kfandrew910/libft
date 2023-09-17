@@ -6,7 +6,7 @@
 /*   By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 14:59:47 by akovacs-          #+#    #+#             */
-/*   Updated: 2023/09/16 15:01:28 by akovacs-         ###   ########.fr       */
+/*   Updated: 2023/09/17 12:59:20 by akovacs-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	}
 	if (c == 0)
-		return (ptr);
+		return (ptr + i);
 	return (0);
 }
+
