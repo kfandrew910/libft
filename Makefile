@@ -20,7 +20,10 @@ LIB = ar rcs
 
 NAME = libft.a
 
+CC = gcc
 FLAGS = -Wall -Wextra -Werror
+
+OBJ = $(SRC:.c=.o)
 
 SOURCE = ft_atoi.c\
 ft_bzero.c\
