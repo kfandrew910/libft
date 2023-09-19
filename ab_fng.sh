@@ -1,1 +1,1 @@
-ls ft*.c | sed 's/$/\//'
+ls ft*.c | sed 's/$/\\/'
