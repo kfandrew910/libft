@@ -16,7 +16,7 @@
 	r: Para reemplazar archivo existente.\
 	c: Para crear archivo si no existe.\
 	s: Actualiza el indice del archivo.
-LIB = ar rcs
+AR = ar rcs
 
 NAME = libft.a
 
@@ -50,4 +50,8 @@ ft_toupper.c
 
 all: $(NAME)
 	
+$(NAME): $(OBJ) $(INCLUDE)
+	$(AR) $(NAME) $(OBJ)
 
+%.o: %.c
+	$(CC) $(FLAGS) -c -o $@ $<
