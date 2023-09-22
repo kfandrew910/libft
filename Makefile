@@ -25,7 +25,7 @@ FLAGS = -Wall -Wextra -Werror
 
 OBJ = $(SRC:.c=.o)
 
-SOURCE = ft_atoi.c\
+SRC = ft_atoi.c\
 ft_bzero.c\
 ft_isalnum.c\
 ft_isalpha.c\
@@ -55,3 +55,11 @@ $(NAME): $(OBJ) $(INCLUDE)
 
 %.o: %.c
 	$(CC) $(FLAGS) -c -o $@ $<
+
+clean:
+	$(RM) $(OBJ)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all

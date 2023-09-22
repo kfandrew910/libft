@@ -37,5 +37,5 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 		}
 		dst[i + d_size] = 0;
 	}
-	return (i);
+	return (i + space_left);
 }
