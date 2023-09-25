@@ -6,7 +6,7 @@
 /*   By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:08:01 by akovacs-          #+#    #+#             */
-/*   Updated: 2023/09/19 12:23:14 by akovacs-         ###   ########.fr       */
+/*   Updated: 2023/09/24 14:29:16 by akovacs-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t size)
 
 	src_len = 0;
 	i = 0;
-	while (src[i] != 0)
+	while (src[src_len] != 0)
 		src_len++;
 	if (size > 0)
 	{

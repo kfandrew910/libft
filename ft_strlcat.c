@@ -6,7 +6,7 @@
 /*   By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:50:33 by akovacs-          #+#    #+#             */
-/*   Updated: 2023/09/19 12:22:17 by akovacs-         ###   ########.fr       */
+/*   Updated: 2023/09/24 14:33:37 by akovacs-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 		while (dst[i] != 0 && src[i])
 		{
 			dst[i + d_size] = src[i];
+			i++;
 		}
 		dst[i + d_size] = 0;
 	}
