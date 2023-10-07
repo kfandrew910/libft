@@ -6,7 +6,7 @@
 #    By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 10:17:31 by akovacs-          #+#    #+#              #
-#    Updated: 2023/09/12 10:53:32 by akovacs-         ###   ########.fr        #
+#    Updated: 2023/10/07 22:26:59 by akovacs-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,8 @@ ft_strncmp.c\
 ft_strnstr.c\
 ft_strrchr.c\
 ft_tolower.c\
-ft_toupper.c
+ft_toupper.c\
+ft_calloc.c
 
 
 all: $(NAME)
