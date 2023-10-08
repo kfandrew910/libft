@@ -17,7 +17,7 @@
 	c: Para crear archivo si no existe.\
 	s: Actualiza el indice del archivo.
 AR = ar rcs
-
+RM = rm
 NAME = libft.a
 
 CC = gcc
@@ -54,7 +54,7 @@ ft_strtrim.c
 
 all: $(NAME)
 	
-$(NAME): $(OBJ) $(INCLUDE)
+$(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
 %.o: %.c
