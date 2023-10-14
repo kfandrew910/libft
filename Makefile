@@ -6,7 +6,7 @@
 #    By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 10:17:31 by akovacs-          #+#    #+#              #
-#    Updated: 2023/10/14 14:50:31 by akovacs-         ###   ########.fr        #
+#    Updated: 2023/10/14 15:43:56 by akovacs-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,11 @@ ft_strtrim.c\
 ft_split.c\
 ft_itoa.c\
 ft_strmapi.c\
-ft_striteri.c
+ft_striteri.c\
+ft_putchar_fd.c\
+ft_putstr_fd.c\
+ft_putendl_fd.c\
+ft_putnbr_fd.c
 
 all: $(NAME)
 	
