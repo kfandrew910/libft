@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 12:26:01 by akovacs-          #+#    #+#             */
-/*   Updated: 2023/10/21 15:53:57 by akovacs-         ###   ########.fr       */
+/*   Created: 2023/10/21 22:58:47 by akovacs-          #+#    #+#             */
+/*   Updated: 2023/10/21 23:10:56 by akovacs-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_spacer(char c)
-{
-	if (c >= 9 && c <= 13)
-		return (1);
-	return (0);
-}
+#include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_lstsize(t_list *lst)
 {
-	int	sign;
-	int	nbr;
 	int	i;
 
-	i = 0;
-	sign = 1;
-	nbr = 0;
-	while (is_spacer(nptr[i]))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	if (!lst)
+		return (0);
+	i = 1;
+	while (lst->next)
 	{
-		if (nptr[i] == '-')
-			sign = -1;
+		lst = lst->next;
 		i++;
 	}
-	while (nptr[i] <= '9' && nptr[i] >= '0')
-	{
-		nbr *= 10;
-		nbr += nptr[i] - 48;
-		i++;
-	}
-	return (nbr * sign);
+	return (i);
 }

@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 12:26:01 by akovacs-          #+#    #+#             */
-/*   Updated: 2023/10/21 15:53:57 by akovacs-         ###   ########.fr       */
+/*   Created: 2023/10/21 23:24:31 by akovacs-          #+#    #+#             */
+/*   Updated: 2023/10/22 01:46:01 by akovacs-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_spacer(char c)
-{
-	if (c >= 9 && c <= 13)
-		return (1);
-	return (0);
-}
+#include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	sign;
-	int	nbr;
-	int	i;
+	t_list	*tmp;
+	size_t	pos;
 
-	i = 0;
-	sign = 1;
-	nbr = 0;
-	while (is_spacer(nptr[i]))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	if (!new)
+		return ;
+	if (*lst)
 	{
-		if (nptr[i] == '-')
-			sign = -1;
-		i++;
+		pos = 0;
+		tmp = *lst;
+		while (tmp->next)
+		{
+			tmp = tmp->next;
+			pos++;
+		}
+		tmp->next = new;
 	}
-	while (nptr[i] <= '9' && nptr[i] >= '0')
-	{
-		nbr *= 10;
-		nbr += nptr[i] - 48;
-		i++;
-	}
-	return (nbr * sign);
+	else
+		*lst = new;
 }

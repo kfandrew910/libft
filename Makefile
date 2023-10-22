@@ -6,7 +6,7 @@
 #    By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 10:17:31 by akovacs-          #+#    #+#              #
-#    Updated: 2023/10/14 15:43:56 by akovacs-         ###   ########.fr        #
+#    Updated: 2023/10/22 02:05:57 by akovacs-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ NAME = libft.a
 
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
+
+LIBRARY = libft.h
 
 OBJ = $(SRC:.c=.o)
 
@@ -60,16 +62,29 @@ ft_putstr_fd.c\
 ft_putendl_fd.c\
 ft_putnbr_fd.c
 
+SRC_BONUS = ft_lstnew.c\
+	    ft_lstadd_front.c\
+	    ft_lstsize.c\
+	    ft_lstlast.c\
+	    ft_lstadd_back.c\
+	    ft_lstdelone.c\
+	    ft_lstclear.c
+
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
+
 all: $(NAME)
 	
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(LIBRARY)
 	$(AR) $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) $(FLAGS) -c -o $@ $<
 
+bonus: $(OBJ) $(OBJ_BONUS) 
+	$(AR) $(NAME) $(OBJ) $(OBJ_BONUS)
+
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
