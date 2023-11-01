@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 02:00:34 by akovacs-          #+#    #+#             */
-/*   Updated: 2023/10/22 18:52:14 by akovacs-         ###   ########.fr       */
+/*   Created: 2023/10/29 21:37:30 by akovacs-          #+#    #+#             */
+/*   Updated: 2023/10/29 22:01:12 by akovacs-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*tmp;
+	t_list	*start;
 	t_list	*actual;
 
-	actual = *lst;
-	while (actual)
+	if (!lst)
+		return (0);
+	actual = ft_lstnew(f(lst->content));
+	start = actual;
+	while (lst->next)
 	{
-		tmp = actual->content;
-		del(tmp->content);
-		free(actual);
-		actual = tmp->next;
+		lst = lst->next;
+		actual->next = ft_lstnew(f(lst->content));
+		if (!(actual->next))
+		{
+			del(actual->next);
+			free(actual->next);
+			return (NULL);
+		}
+		actual = actual->next;
 	}
-	*lst = NULL;
+	return (start);
 }

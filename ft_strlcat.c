@@ -6,7 +6,7 @@
 /*   By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:50:33 by akovacs-          #+#    #+#             */
-/*   Updated: 2023/09/24 14:33:37 by akovacs-         ###   ########.fr       */
+/*   Updated: 2023/10/29 21:16:25 by akovacs-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -26,7 +26,7 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 	{
 		return (size + s_size);
 	}
-	while (src[j] && i + 1 < size)
+	while (src[j] && i < size - 1)
 	{
 		dst[i] = src[j];
 		i++;

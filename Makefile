@@ -6,7 +6,7 @@
 #    By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 10:17:31 by akovacs-          #+#    #+#              #
-#    Updated: 2023/10/22 02:05:57 by akovacs-         ###   ########.fr        #
+#    Updated: 2023/10/29 21:28:10 by akovacs-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,9 @@ SRC_BONUS = ft_lstnew.c\
 	    ft_lstlast.c\
 	    ft_lstadd_back.c\
 	    ft_lstdelone.c\
-	    ft_lstclear.c
+	    ft_lstclear.c\
+	    ft_lstiter.c\
+	    ft_lstmap.c
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
